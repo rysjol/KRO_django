@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+</head>
+<body>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.created }}</p>
+        <h1><a href="">{{ post.post_name }}</a></h1>
+        <p>{{ post.post_body|linebreaksbr }}</p>
+        <p>_________________________________________</p>
+    </div>
+{% endfor %}
+
+</body>
+</html>
