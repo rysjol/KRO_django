@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% block styles %}
+    <link href="https://fonts.googleapis.com/css?family=Fahkwang" rel="stylesheet">
+    <style>
+        .post1 {
+            background-color: lightgray;
+            color: black;
+        }
+        .post2 {
+            background-color: darkgray;
+            color: white;
+        }
+        h1 a {
+            color: black;
+            font-family: 'Fahkwang';
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    To jest tekst poza szablonem w base.html
+{% block content2 %}
+    To jest tekst, który zostanie zastąpiony.
+{% endblock %}
+
+</body>
+</html>

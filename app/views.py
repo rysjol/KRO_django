@@ -6,8 +6,8 @@ from .models import Post
 
 
 def index(request):
-    context = {}
-    return render_to_response('index.html', context)
+    posts = Post.objects.order_by('created')[:10]
+    return render_to_response('index.html', {'posts': posts})
 
 
 def category(request, id):
