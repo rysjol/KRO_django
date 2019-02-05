@@ -24,7 +24,23 @@
 <body>
     To jest tekst poza szablonem w base.html
 {% block content2 %}
-    To jest tekst, który zostanie zastąpiony.
+    {% for post in posts %}
+    <div class="{% cycle 'post1' 'post2' %}">
+        <div class="post-name-item">
+            <h1><a href="{% url 'category' id=post.category_id %}">{{ post.post_name | title }}</a></h1>
+        </div>
+        <div class="post-cat-item">
+            Category: {{ post.category }} <br/>
+        </div>
+        <div class="post-date-item">
+            Created: {{ post.created | date:"D d M Y" }}
+        </div>
+{#        <br/>#}
+        <div class="post-body-item">
+            {{ post.post_body | linebreaksbr}}
+        </div>
+    </div>
+{% endfor %}
 {% endblock %}
 
 </body>

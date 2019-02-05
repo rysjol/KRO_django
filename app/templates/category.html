@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Categories</title>
+    {% extends 'base.html' %}
 </head>
 <body>
-
+{% block content2 %}
 {% for post in posts %}
-    <div>
+
+    <div class="{% cycle 'post1' 'post2' %}">
         <p>published: {{ post.created }}</p>
         <h1>{{ post.post_name }}</h1>
         <p>{{ post.post_body|linebreaksbr }}</p>
         <p>_________________________________________</p>
     </div>
 {% endfor %}
-
+{% endblock %}
 </body>
 </html>
